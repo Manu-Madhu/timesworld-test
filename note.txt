@@ -1,0 +1,14 @@
+common components
+-----------------
+
+BUTTON = 2
+load more
+sign in
+
+INPUT = 2
+email 
+password
+
+SIGN IN logo = 4
+
+COUNTRY CARD = 12

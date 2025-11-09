@@ -59,6 +59,10 @@
   height: 70px;
 }
 
+.custom-alert {
+  width: 65%;
+}
+
 /* custom check box */
 .custom-checkbox {
   position: relative;
@@ -202,6 +206,10 @@
   .horizontal-line {
     height: 3px;
     background-color: #3d3d3d;
+  }
+
+  .custom-alert {
+    width: 100%;
   }
 
   .welcome-text {

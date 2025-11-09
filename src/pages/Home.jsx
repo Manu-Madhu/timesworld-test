@@ -23,7 +23,7 @@ const Home = () => {
       <HeroSection />
 
       {/* Country list section */}
-      <CountriesSection />
+      <CountriesSection currentFilter={active} />
 
       {/* footer */}
       <Footer />

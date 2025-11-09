@@ -75,7 +75,7 @@ const SignInForm = () => {
         {error && (
           <Alert
             variant="danger"
-            className="w-100 text-center fw-semibold"
+            className="custom-alert text-center fw-semibold"
             onClose={() => setError("")}
             dismissible
           >
@@ -86,7 +86,7 @@ const SignInForm = () => {
         {showSuccess && (
           <Alert
             variant="success"
-            className="w-100 text-center fw-semibold"
+            className="custom-alert text-center fw-semibold"
             onClose={() => setShowSuccess(false)}
             dismissible
           >

@@ -132,7 +132,7 @@ const SignInForm = () => {
         {/* Button */}
         <Button
           type="submit"
-          className="custom-button-style border-0 text-white fw-semibold rounded-0 fs-5 w-100"
+          className="custom-button-style border-0 text-white fw-semibold rounded-0 fs-5"
           style={{
             backgroundColor: "#3C3C3C",
           }}

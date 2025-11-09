@@ -141,20 +141,10 @@
 }
 
 /* welcome line */
-.horizontal-line-right {
-  height: 4px;
-  background-color: #3d3d3d;
-  width: 37%;
-}
 .horizontal-line {
   height: 5px;
   background-color: #3d3d3d;
-}
-
-.horizontal-line-left {
-  height: 4px;
-  background-color: #3d3d3d;
-  width: 38%;
+  width: 100%;
 }
 
 /* slider */
@@ -256,7 +246,7 @@
 /* MOBILE VIEW */
 @media (max-width: 768px) {
   .horizontal-line {
-    height: 3px;
+    height: 5px;
     background-color: #3d3d3d;
   }
 

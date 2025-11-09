@@ -21,9 +21,9 @@ const SignInForm = () => {
   };
 
   return (
-    <form onSubmit={submitHandler} className="text-center">
+    <form onSubmit={submitHandler} className="text-start w-100 mt-2">
       {/* Inputs */}
-      <div className="d-flex flex-column align-items-center gap-3">
+      <div className="d-flex flex-column align-items-start gap-2 gap-md-3">
         <input
           type="email"
           name="email"
@@ -31,13 +31,7 @@ const SignInForm = () => {
           onChange={inputHandleChange}
           required
           placeholder="Username or email"
-          className="form-control border border-2 rounded-0"
-          style={{
-            width: "280px",
-            height: "48px",
-            borderColor: "#3E3E3E",
-            color: "#3E3E3E",
-          }}
+          className="custom-input mb-2"
         />
 
         <input
@@ -47,24 +41,16 @@ const SignInForm = () => {
           onChange={inputHandleChange}
           required
           placeholder="Password"
-          className="form-control border border-2 rounded-0"
-          style={{ width: "280px", height: "48px" }}
+          className="custom-input"
         />
 
         {/* Checkbox */}
-        <div  className="d-flex align-items-center gap-2 mt-1"
-          style={{ width: "280px" }}
-        >
-          <input
-            type="checkbox"
-            id="keepSignedIn"
-            className="-input border border-2"
-            style={{ width: "20px", height: "20px" }}
-          />
+        <div className="my-3">
           <label
-            htmlFor="keepSignedIn"
-            className="form-check-label fw-semibold"
+            className="custom-checkbox fw-semibold"
           >
+            <input type="checkbox" id="keepSignedIn" />
+            <span className="checkmark"></span>
             Keep me signed in
           </label>
         </div>
@@ -72,8 +58,10 @@ const SignInForm = () => {
         {/* Button */}
         <Button
           type="submit"
-          className="border-0 text-white fw-semibold rounded-0"
-          style={{ width: "280px", height: "48px", backgroundColor:'#3C3C3C' }}
+          className="custom-button-style border-0 text-white fw-semibold rounded-0 fs-5"
+          style={{
+            backgroundColor: "#3C3C3C",
+          }}
         >
           Sign In
         </Button>

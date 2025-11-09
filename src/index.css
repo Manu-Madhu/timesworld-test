@@ -1,12 +1,18 @@
+/* src/index.css */
 :root {
-  font-family: 'Noto Sans', sans-serif;;
+  --base-font: "Noto Sans", sans-serif;
+  font-family: var(--base-font);
   line-height: 1.5;
   font-weight: 400;
-
-  background-color: "#FFFFFF";
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: var(--base-font);
+  margin: 0;
+  padding: 0;
+  color: #000;
+  background: #fff;
 }

@@ -1,15 +1,12 @@
-// CountriesSection.js
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Row, Col, Button } from "react-bootstrap";
 import { setCountries, setDisplayedCount } from "../../store/countriesSlice";
 import CountryCard from "./CountryCard";
 
-const CountriesSection = () => {
+const CountriesSection = ({ currentFilter }) => {
   const dispatch = useDispatch();
-  const { countries, displayedCount, currentFilter } = useSelector(
-    (state) => state.countries
-  );
+  const { countries, displayedCount } = useSelector((state) => state.countries);
 
   useEffect(() => {
     const fetchCountries = async () => {
@@ -22,10 +19,14 @@ const CountriesSection = () => {
     fetchCountries();
   }, [dispatch]);
 
+  // Filter countries based on prop
   const filteredCountries =
     currentFilter === "All"
       ? countries
-      : countries.filter((country) => country.region === currentFilter);
+      : countries.filter(
+          (country) =>
+            country.region.toLowerCase() === currentFilter.toLowerCase()
+        );
 
   const countriesToShow = filteredCountries.slice(0, displayedCount);
 
@@ -46,10 +47,10 @@ const CountriesSection = () => {
       {displayedCount < filteredCountries.length && (
         <div className="text-center mt-4">
           <Button
-            className="custom-button-style border-0 text-white fw-semibold rounded-0 fs-5 "
+            className="custom-button-style border-0 text-white fw-semibold rounded-0 fs-5"
             style={{
               backgroundColor: "#3C3C3C",
-              width:'250px'
+              width: "250px",
             }}
             onClick={handleLoadMore}
           >

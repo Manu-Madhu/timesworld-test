@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import banner1 from "../../assets/images/home/banner1.png";
 import banner2 from "../../assets/images/home/banner2.png";
-import banner3 from "../../assets/images/home/banner3.png";
+// import banner3 from "../../assets/images/home/banner3.png";
 import { RiArrowLeftLine, RiArrowRightLine } from "react-icons/ri";
 
 const Slider = () => {
-  const slides = [banner1, banner2, banner3];
+  const slides = [banner1, banner2];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const handlePrev = () => {
@@ -17,29 +17,14 @@ const Slider = () => {
   };
 
   return (
-    <main
-      className="banner-border position-relative overflow-hidden"
-      style={{
-        width: "100%",
-        height: "670px",
-      }}
-    >
+    <main className="banner-border slider-wrapper position-relative overflow-hidden">
       {/* Slider container */}
       <div className="d-flex">
-        <div
-          className="flex-shrink-0"
-          style={{ width: "100%", height: "670px" }}
-        >
+        <div className="slider-wrapper flex-shrink-0">
           <img
             src={slides[currentIndex]}
             alt={`slider`}
-            style={{
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              objectPosition: "center",
-              display: "block",
-            }}
+            className="slider-img"
           />
         </div>
       </div>

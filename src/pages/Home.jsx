@@ -1,8 +1,10 @@
+import { useState } from "react";
+
 import Footer from "../components/common/Footer";
 import Navbar from "../components/common/Navbar";
 import HeroSection from "../components/home/HeroSection";
 import CountriesSection from "../components/home/CountriesSection";
-import { useState } from "react";
+import TitleSection from "../components/home/TitleSection";
 
 const Home = () => {
   const [active, setActive] = useState("All");
@@ -13,6 +15,9 @@ const Home = () => {
     <>
       {/* Navbar section*/}
       <Navbar active={active} navItems={navItems} setActive={setActive} />
+
+      {/* Title section */}
+      <TitleSection />
 
       {/* Hero section */}
       <HeroSection />

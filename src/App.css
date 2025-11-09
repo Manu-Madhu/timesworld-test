@@ -136,15 +136,24 @@
 
 .hero-left {
   width: 100%;
-  min-height: 420px;
-  flex: 1 1 auto;
 }
 
 .hero-right {
   width: 100%;
   max-width: 330px;
-  flex: 0 0 25%;
-  min-height: 420px;
+  height: 670px;
+}
+
+.slider-wrapper {
+  width: 100%;
+  height: 670px;
+}
+.slider-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 .slider-dots {
@@ -155,8 +164,22 @@
   color: #1d1b20;
 }
 
+/* card */
+.country-card {
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
 
-/* banner */
+.country-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.flag-container {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
 
 /* ----- Home end ----- */
 
@@ -220,12 +243,22 @@
   }
 
   /* slider */
-  .hero-left,
-  .hero-right {
-    min-height: 220px;
+  .hero-left {
+    max-height: 250px;
   }
+
   .hero-right {
     flex-basis: 100%;
     max-width: 100%;
+  }
+
+  .slider-wrapper {
+    width: 100%;
+    height: 250px;
+  }
+
+  .hero-right {
+    width: 100%;
+    max-height: 200px;
   }
 }

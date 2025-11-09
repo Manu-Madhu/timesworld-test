@@ -1,8 +1,8 @@
+// CountriesSection.js
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col, Button } from 'react-bootstrap';
 import { setCountries, setDisplayedCount } from '../../store/countriesSlice';
-
 import CountryCard from './CountryCard';
 
 const CountriesSection = () => {
@@ -10,7 +10,6 @@ const CountriesSection = () => {
   const { countries, displayedCount, currentFilter } = useSelector((state) => state.countries);
 
   useEffect(() => {
-    // Fetch countries from API
     const fetchCountries = async () => {
       const response = await fetch('https://restcountries.com/v2/all?fields=name,region,flag');
       const data = await response.json();
@@ -19,12 +18,10 @@ const CountriesSection = () => {
     fetchCountries();
   }, [dispatch]);
 
-  // Filter countries by region
   const filteredCountries = currentFilter === 'All' 
     ? countries 
     : countries.filter(country => country.region === currentFilter);
 
-  // Countries to display
   const countriesToShow = filteredCountries.slice(0, displayedCount);
 
   const handleLoadMore = () => {
@@ -32,17 +29,19 @@ const CountriesSection = () => {
   };
 
   return (
-    <div className="mt-5 common-container">
+    <div className="mt-5 common-container px-3">
       <Row className="g-4">
         {countriesToShow.map((country) => (
-          <Col key={country.name} sm={6} md={4} lg={3}>
+          <Col key={country.name} xs={6} sm={4} md={3} className="mb-4">
             <CountryCard country={country} />
           </Col>
         ))}
       </Row>
       {displayedCount < filteredCountries.length && (
         <div className="text-center mt-4">
-          <Button variant="primary" onClick={handleLoadMore}>Load More</Button>
+          <Button className='custom-button-style' style={{width:'20%'}} onClick={handleLoadMore}>
+            Load More
+          </Button>
         </div>
       )}
     </div>

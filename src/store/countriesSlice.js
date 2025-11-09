@@ -4,8 +4,7 @@ import {
 
 const initialState = {
     countries: [],
-    displayedCount: 12,
-    currentFilter: 'All',
+    displayedCount: 12
 };
 
 const countriesSlice = createSlice({
@@ -17,16 +16,12 @@ const countriesSlice = createSlice({
         },
         setDisplayedCount: (state, action) => {
             state.displayedCount = action.payload;
-        },
-        setCurrentFilter: (state, action) => {
-            state.currentFilter = action.payload;
-        },
+        }
     },
 });
 
 export const {
     setCountries,
-    setDisplayedCount,
-    setCurrentFilter
+    setDisplayedCount
 } = countriesSlice.actions;
 export default countriesSlice.reducer;

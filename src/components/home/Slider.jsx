@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import banner1 from "../../assets/images/home/banner1.png";
 import banner2 from "../../assets/images/home/banner2.png";
 // import banner3 from "../../assets/images/home/banner3.png";
 import { RiArrowLeftLine, RiArrowRightLine } from "react-icons/ri";
+import SliderSkeleton from "./skeltons/SliderSkeleton";
 
 const Slider = () => {
   const slides = [banner1, banner2];
@@ -18,8 +19,9 @@ const Slider = () => {
 
   return (
     <main className="banner-border slider-wrapper position-relative overflow-hidden">
+
       {/* Slider container */}
-      <div className="d-flex">
+      <div className={`d-flex`}>
         <div className="slider-wrapper flex-shrink-0">
           <img
             src={slides[currentIndex]}

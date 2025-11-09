@@ -246,7 +246,7 @@
 /* MOBILE VIEW */
 @media (max-width: 768px) {
   .horizontal-line {
-    height: 5px;
+    height: 4px;
     background-color: #3d3d3d;
   }
 

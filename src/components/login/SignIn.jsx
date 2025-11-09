@@ -1,18 +1,16 @@
 import SignInForm from "./SignInForm";
 
-
-import { FaGoogle, FaFacebookF, FaLinkedinIn, FaTwitter } from "react-icons/fa";
+import SocialIcons from "./SocialIcons";
+import { SignInIcons } from "../../utils/socialLinks";
 
 const SignIn = () => {
   return (
     <main className="d-flex flex-column align-items-center align-items-md-start text-center text-md-start p-5 w-100 gap-2 gap-md-3">
       {/* Title */}
       <div className="d-flex flex-column gap-2 gap-md-3">
-        <h2 className="form-title fw-bold">
-          Sign In
-        </h2>
+        <h2 className="form-title fw-bold">Sign In</h2>
         <p className="form-subtitle fw-bold">
-          New user? 
+          New user?
           <a href="/" className="fw-semibold text-decoration-none ms-3">
             <span className="text-primary">Create an account</span>
           </a>
@@ -30,30 +28,10 @@ const SignIn = () => {
       </div>
 
       {/* Social icons */}
-      <div className="common-sign-width d-flex justify-content-center align-items-center gap-3 ">
-        <div
-          className="social-icons rounded-circle d-flex align-items-center justify-content-center"
-        >
-          <FaGoogle />
-        </div>
-
-        <div
-          className="social-icons rounded-circle d-flex align-items-center justify-content-center"
-        >
-          <FaFacebookF />
-        </div>
-
-        <div
-          className="social-icons rounded-circle d-flex align-items-center justify-content-center"
-        >
-          <FaLinkedinIn />
-        </div>
-
-        <div
-          className="social-icons rounded-circle d-flex align-items-center justify-content-center"
-        >
-          <FaTwitter />
-        </div>
+      <div className="common-sign-width d-flex justify-content-center align-items-center gap-3">
+        {SignInIcons.map(({ id, icon }) => (
+          <SocialIcons key={id} icon={icon} />
+        ))}
       </div>
     </main>
   );

@@ -6,7 +6,7 @@
 
 /* WEB VIEW */
 
-/* ----- Sign in start ----- */
+/* ----- SignIn start ----- */
 .form-title {
   font-size: 45px;
   color: #3d3d3d;
@@ -112,8 +112,22 @@
 .custom-checkbox:hover .checkmark {
   border-color: #2e2e2e;
 }
+/* ----- SignIn end ----- */
 
-/* ----- Sign in end ----- */
+
+/* ----- Navbar start ----- */
+.nav-link:hover {
+  color: #000 !important;
+}
+
+.active-link span {
+  transition: width 0.3s ease;
+}
+/* ----- Navbar end ----- */
+
+
+/* ----- Home start ----- */
+/* ----- Home end ----- */
 
 /* MOBILE VIEW */
 @media screen and (max-width: 768px) {

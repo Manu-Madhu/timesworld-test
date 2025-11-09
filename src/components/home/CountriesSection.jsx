@@ -1,26 +1,31 @@
 // CountriesSection.js
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Row, Col, Button } from 'react-bootstrap';
-import { setCountries, setDisplayedCount } from '../../store/countriesSlice';
-import CountryCard from './CountryCard';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Row, Col, Button } from "react-bootstrap";
+import { setCountries, setDisplayedCount } from "../../store/countriesSlice";
+import CountryCard from "./CountryCard";
 
 const CountriesSection = () => {
   const dispatch = useDispatch();
-  const { countries, displayedCount, currentFilter } = useSelector((state) => state.countries);
+  const { countries, displayedCount, currentFilter } = useSelector(
+    (state) => state.countries
+  );
 
   useEffect(() => {
     const fetchCountries = async () => {
-      const response = await fetch('https://restcountries.com/v2/all?fields=name,region,flag');
+      const response = await fetch(
+        "https://restcountries.com/v2/all?fields=name,region,flag"
+      );
       const data = await response.json();
       dispatch(setCountries(data));
     };
     fetchCountries();
   }, [dispatch]);
 
-  const filteredCountries = currentFilter === 'All' 
-    ? countries 
-    : countries.filter(country => country.region === currentFilter);
+  const filteredCountries =
+    currentFilter === "All"
+      ? countries
+      : countries.filter((country) => country.region === currentFilter);
 
   const countriesToShow = filteredCountries.slice(0, displayedCount);
 
@@ -37,10 +42,17 @@ const CountriesSection = () => {
           </Col>
         ))}
       </Row>
-      
+
       {displayedCount < filteredCountries.length && (
         <div className="text-center mt-4">
-          <Button className='custom-button-style' style={{width:'20%'}} onClick={handleLoadMore}>
+          <Button
+            className="custom-button-style border-0 text-white fw-semibold rounded-0 fs-5 "
+            style={{
+              backgroundColor: "#3C3C3C",
+              width:'250px'
+            }}
+            onClick={handleLoadMore}
+          >
             Load More
           </Button>
         </div>

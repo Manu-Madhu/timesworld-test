@@ -6,13 +6,13 @@ const CountryNavbar = ({ active, navItems, setActive }) => {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <Navbar bg="white" expand="md" expanded={expanded} className="py-3 ">
+    <Navbar bg="white" expand="md" expanded={expanded} className="py-4 py-md-5 px-2">
       <Container
         fluid
         className="common-container d-flex justify-content-between align-items-center"
       >
         {/* Left side */}
-        <Navbar.Brand className="fw-bold fs-4 text-dark m-0">
+        <Navbar.Brand className="fw-bold fs-3 text-dark m-0">
           Countries
         </Navbar.Brand>
 
@@ -39,10 +39,10 @@ const CountryNavbar = ({ active, navItems, setActive }) => {
                   setActive(item);
                   setExpanded(false); 
                 }}
-                className={`fw-semibold position-relative ${
+                className={`fw-semibold  position-relative ${
                   active === item ? "text-dark" : "text-muted"
                 }`}
-                style={{ paddingBottom: "6px" }}
+                style={{ paddingBottom: "6px" , fontSize:'20px' }}
               >
                 {item}
                 {active === item && (

@@ -1,5 +1,5 @@
 .common-container {
-  max-width: 1380px;
+  max-width: 1480px;
   width: 100%;
   margin: 0 auto;
 }
@@ -52,7 +52,7 @@
 
 .custom-button-style {
   width: 65%;
-  height: 60px;
+  height: 70px;
 }
 
 /* custom check box */
@@ -114,7 +114,6 @@
 }
 /* ----- SignIn end ----- */
 
-
 /* ----- Navbar start ----- */
 .nav-link:hover {
   color: #000 !important;
@@ -125,8 +124,40 @@
 }
 /* ----- Navbar end ----- */
 
-
 /* ----- Home start ----- */
+/* slider */
+.banner-border {
+  border: 3px solid var(--primary-color);
+}
+
+.hero-wrapper {
+  align-items: stretch;
+}
+
+.hero-left {
+  width: 100%;
+  min-height: 420px;
+  flex: 1 1 auto;
+}
+
+.hero-right {
+  width: 100%;
+  max-width: 330px;
+  flex: 0 0 25%;
+  min-height: 420px;
+}
+
+.slider-dots {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: #1d1b20;
+}
+
+
+/* banner */
+
 /* ----- Home end ----- */
 
 /* MOBILE VIEW */
@@ -186,5 +217,15 @@
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
+  }
+
+  /* slider */
+  .hero-left,
+  .hero-right {
+    min-height: 220px;
+  }
+  .hero-right {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 }

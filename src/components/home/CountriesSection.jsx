@@ -21,12 +21,9 @@ const CountriesSection = ({ currentFilter }) => {
 
   // Filter countries based on prop
   const filteredCountries =
-    currentFilter === "All"
-      ? countries
-      : countries.filter(
-          (country) =>
-            country.region.toLowerCase() === currentFilter.toLowerCase()
-        );
+    currentFilter === "All" ? countries : countries.filter(  
+      (country) =>country.region.toLowerCase() === currentFilter.toLowerCase()
+    );
 
   const countriesToShow = filteredCountries.slice(0, displayedCount);
 
@@ -35,22 +32,21 @@ const CountriesSection = ({ currentFilter }) => {
   };
 
   return (
-    <div className="mt-5 common-container px-3">
-      <Row className="g-4">
+    <div className="mt-4 mt-md-5 common-container px-4 px-md-3">
+      <Row className="g-3 g-md-4">
         {countriesToShow.map((country) => (
-          <Col key={country.name} xs={6} sm={4} md={3} className="mb-4">
+          <Col key={country.name} xs={12}  md={6} >
             <CountryCard country={country} />
           </Col>
         ))}
       </Row>
 
       {displayedCount < filteredCountries.length && (
-        <div className="text-center mt-4">
+        <div className="text-center mt-4 mt-md-5">
           <Button
-            className="custom-button-style border-0 text-white fw-semibold rounded-0 fs-5"
+            className="custom-load-button border-0 text-white fw-md-semibold rounded-0"
             style={{
               backgroundColor: "#3C3C3C",
-              width: "250px",
             }}
             onClick={handleLoadMore}
           >

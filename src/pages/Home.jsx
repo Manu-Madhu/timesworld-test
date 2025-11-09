@@ -1,11 +1,29 @@
-import React from 'react'
+import Footer from "../components/common/Footer";
+import Navbar from "../components/common/Navbar";
+import HeroSection from "../components/home/HeroSection";
+import CountriesSection from "../components/home/CountriesSection";
+import { useState } from "react";
 
 const Home = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  const [active, setActive] = useState("All");
 
-export default Home
+  const navItems = ["All", "Asia", "Europe"];
+
+  return (
+    <>
+      {/* Navbar section*/}
+      <Navbar active={active} navItems={navItems} setActive={setActive} />
+
+      {/* Hero section */}
+      <HeroSection />
+
+      {/* Country list section */}
+      <CountriesSection />
+
+      {/* footer */}
+      <Footer />
+    </>
+  );
+};
+
+export default Home;

@@ -1,30 +1,19 @@
-// CountryCard.js
-import React from 'react';
-import { Card } from 'react-bootstrap';
 
 const CountryCard = ({ country }) => {
   return (
-    <Card className="h-100 shadow-sm country-card">
-      <div className="flag-container" style={{ height: '160px', overflow: 'hidden' }}>
-        <Card.Img 
-          variant="top" 
-          src={country.flag} 
-          style={{ 
-            height: '100%', 
-            width: '100%', 
-            objectFit: 'cover'
-          }} 
-        />
+    <div className="country-card banner-border d-flex p-2 p-md-3 gap-3 gap-md-4">
+      <div className="flag-container" style={{ overflow: 'hidden' }}>
+        <img src={country.flag} alt="Country flg" />
       </div>
-      <Card.Body className="d-flex flex-column p-3">
-        <Card.Title className="h6 fw-bold mb-2" style={{ fontSize: '0.95rem' }}>
+      <div className="d-flex flex-column p-md-3">
+        <h2 className="card-text fw-bold m-0 mb-md-2">
           {country.name}
-        </Card.Title>
-        <Card.Text className="text-muted mb-0" style={{ fontSize: '0.85rem' }}>
-          <strong>Region:</strong> {country.region}
-        </Card.Text>
-      </Card.Body>
-    </Card>
+        </h2>
+        <p className="card-para mt-1">
+           {country.region}
+        </p>
+      </div>
+    </div>
   );
 };
 

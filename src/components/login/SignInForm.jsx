@@ -1,11 +1,20 @@
 import { useState } from "react";
-import { Button } from "react-bootstrap";
+import { Button, Alert } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { setUser } from "../../store/userSlice";
 
 const SignInForm = () => {
   const [form, setForm] = useState({
     email: "",
     password: "",
   });
+  const [keepSignedIn, setKeepSignedIn] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [error, setError] = useState(""); 
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   // Handle input change
   const inputHandleChange = (e) => {
@@ -16,14 +25,76 @@ const SignInForm = () => {
     }));
   };
 
+  // Password validation
+  const validatePassword = (password) => {
+    const minLength = /.{8,}/;
+    const hasUppercase = /[A-Z]/;
+    const hasNumber = /[0-9]/;
+    const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/;
+
+    return (
+      minLength.test(password) &&
+      hasUppercase.test(password) &&
+      hasNumber.test(password) &&
+      hasSymbol.test(password)
+    );
+  };
+
   const submitHandler = (e) => {
     e.preventDefault();
+    setError(""); 
+
+    const { email, password } = form;
+
+    // Validation
+    if (!validatePassword(password)) {
+      setError(
+        "Password must be at least 8 characters long and include 1 uppercase letter, 1 number, and 1 special symbol."
+      );
+      return;
+    }
+
+    if (!keepSignedIn) {
+      setError("Please check 'Keep me signed in' before submitting.");
+      return;
+    }
+
+    dispatch(setUser({ email }));
+
+    setShowSuccess(true);
+
+    setTimeout(() => {
+      navigate("/home");
+    }, 2000);
   };
 
   return (
     <form onSubmit={submitHandler} className="text-start w-100 mt-2">
-      {/* Inputs */}
       <div className="d-flex flex-column align-items-start gap-2 gap-md-3">
+        {/* Alert */}
+        {error && (
+          <Alert
+            variant="danger"
+            className="w-100 text-center fw-semibold"
+            onClose={() => setError("")}
+            dismissible
+          >
+            {error}
+          </Alert>
+        )}
+
+        {showSuccess && (
+          <Alert
+            variant="success"
+            className="w-100 text-center fw-semibold"
+            onClose={() => setShowSuccess(false)}
+            dismissible
+          >
+            Login successful! Redirecting to home...
+          </Alert>
+        )}
+
+        {/* Inputs */}
         <input
           type="email"
           name="email"
@@ -46,10 +117,13 @@ const SignInForm = () => {
 
         {/* Checkbox */}
         <div className="my-3">
-          <label
-            className="custom-checkbox fw-semibold"
-          >
-            <input type="checkbox" id="keepSignedIn" />
+          <label className="custom-checkbox fw-semibold d-flex align-items-center gap-2">
+            <input
+              type="checkbox"
+              id="keepSignedIn"
+              checked={keepSignedIn}
+              onChange={() => setKeepSignedIn(!keepSignedIn)}
+            />
             <span className="checkmark"></span>
             Keep me signed in
           </label>
@@ -58,7 +132,7 @@ const SignInForm = () => {
         {/* Button */}
         <Button
           type="submit"
-          className="custom-button-style border-0 text-white fw-semibold rounded-0 fs-5"
+          className="custom-button-style border-0 text-white fw-semibold rounded-0 fs-5 w-100"
           style={{
             backgroundColor: "#3C3C3C",
           }}

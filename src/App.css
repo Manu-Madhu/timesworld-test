@@ -141,7 +141,7 @@
 
 /* ----- Home start ----- */
 .welcome-text {
-  font-size: 55px;
+  font-size: 60px;
 }
 
 /* slider */
@@ -213,8 +213,29 @@
 
 /* ----- Home end ----- */
 
+/* Skeleton Loading Effect */
+.skeleton-box {
+  background: linear-gradient(90deg, #e3e3e3 25%, #f0f0f0 50%, #e3e3e3 75%);
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s infinite linear;
+  border-radius: 4px;
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.skeleton-card {
+  min-height: 160px;
+}
+
 /* MOBILE VIEW */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   .horizontal-line {
     height: 3px;
     background-color: #3d3d3d;
@@ -337,5 +358,9 @@
   .card-para {
     font-size: 15px;
     color: #6f6f6f;
+  }
+
+  .skeleton-card {
+    min-height: 80px;
   }
 }

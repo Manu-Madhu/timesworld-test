@@ -37,6 +37,7 @@ const CountriesSection = () => {
           </Col>
         ))}
       </Row>
+      
       {displayedCount < filteredCountries.length && (
         <div className="text-center mt-4">
           <Button className='custom-button-style' style={{width:'20%'}} onClick={handleLoadMore}>

@@ -4,6 +4,10 @@
   margin: 0 auto;
 }
 
+.horizontal-line {
+  height: 4px;
+  background-color: #3d3d3d;
+}
 /* WEB VIEW */
 
 /* ----- SignIn start ----- */
@@ -125,6 +129,9 @@
 /* ----- Navbar end ----- */
 
 /* ----- Home start ----- */
+.welcome-text {
+  font-size: 55px;
+}
 /* slider */
 .banner-border {
   border: 3px solid var(--primary-color);
@@ -185,6 +192,15 @@
 
 /* MOBILE VIEW */
 @media screen and (max-width: 768px) {
+  .horizontal-line {
+    height: 3px;
+    background-color: #3d3d3d;
+  }
+
+  .welcome-text {
+    font-size: 35px;
+  }
+
   .form-title {
     font-size: 34px;
   }

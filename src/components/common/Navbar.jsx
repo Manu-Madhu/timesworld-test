@@ -12,7 +12,7 @@ const CountryNavbar = ({ active, navItems, setActive }) => {
         className="common-container d-flex justify-content-between align-items-center"
       >
         {/* Left side */}
-        <Navbar.Brand  className="nav-title nav-title fw-bold text-dark m-0">
+        <Navbar.Brand  className="nav-title fw-bold text-dark m-0">
           Countries
         </Navbar.Brand>
 

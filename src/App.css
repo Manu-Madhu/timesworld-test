@@ -30,7 +30,7 @@
 
 /* form part */
 .custom-input {
-  border: 3px solid #3e3e3e;
+  border: 2px solid #3e3e3e;
   color: #3e3e3e;
   box-shadow: none;
   padding: 10px 20px;
@@ -47,7 +47,7 @@
 }
 
 .check-input {
-  border: 3px solid #3e3e3e;
+  border: 2px solid #3e3e3e;
 }
 
 .custom-button-style {
@@ -82,7 +82,7 @@
   position: relative;
   height: 32px;
   width: 32px;
-  border: 3px solid #3e3e3e;
+  border: 2px solid #3e3e3e;
   background-color: #f2f2f2;
   display: flex;
   align-items: center;

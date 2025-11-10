@@ -142,14 +142,14 @@
 
 /* welcome line */
 .horizontal-line {
-  height: 5px;
+  height: 3px;
   background-color: #3d3d3d;
   width: 100%;
 }
 
 /* slider */
 .banner-border {
-  border: 3px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 
 .hero-wrapper {
@@ -194,13 +194,13 @@
 
 /* card */
 .country-card {
-  height: 160px;
+  height: 130px;
   box-shadow: 8px 8px 0px 0px rgba(0, 0, 0, 0.102);
 }
 
 .country-card img {
   height: 100%;
-  width: 165px;
+  width: 127px;
   object-fit: cover;
 }
 
@@ -246,7 +246,7 @@
 /* MOBILE VIEW */
 @media (max-width: 768px) {
   .horizontal-line {
-    height: 4px;
+    height:3px;
     background-color: #3d3d3d;
   }
 

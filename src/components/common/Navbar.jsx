@@ -12,7 +12,7 @@ const CountryNavbar = ({ active, navItems, setActive }) => {
         className="common-container d-flex justify-content-between align-items-center"
       >
         {/* Left side */}
-        <Navbar.Brand className="fw-bold fs-3 fs-md-2 text-dark m-0">
+        <Navbar.Brand  className="fw-bold fs-3 fs-md-2 text-dark m-0">
           Countries
         </Navbar.Brand>
 
@@ -30,7 +30,7 @@ const CountryNavbar = ({ active, navItems, setActive }) => {
           id="country-navbar-nav"
           className="justify-content-end"
         >
-          <Nav className="align-items-center gap-5">
+          <Nav className="align-items-center gap-3 gap-md-5">
             {navItems.map((item) => (
               <Nav.Link
                 key={item}

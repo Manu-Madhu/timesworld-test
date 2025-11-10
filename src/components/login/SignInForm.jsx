@@ -70,7 +70,7 @@ const SignInForm = () => {
 
   return (
     <form onSubmit={submitHandler} className="text-start w-100 mt-2">
-      <div className="d-flex flex-column align-items-start gap-2 gap-md-3">
+      <div className="d-flex flex-column align-items-start gap-2 ">
         {/* Alert */}
         {error && (
           <Alert
@@ -117,7 +117,7 @@ const SignInForm = () => {
 
         {/* Checkbox */}
         <div className="my-3">
-          <label className="custom-checkbox fw-semibold d-flex align-items-center gap-2">
+          <label className="custom-checkbox fw-semibold d-flex align-items-center gap-3">
             <input
               type="checkbox"
               id="keepSignedIn"
@@ -132,7 +132,7 @@ const SignInForm = () => {
         {/* Button */}
         <Button
           type="submit"
-          className="custom-button-style border-0 text-white fw-semibold rounded-0 fs-5"
+          className="custom-button-style border-0 text-white fw-semibold rounded-0"
           style={{
             backgroundColor: "#3C3C3C",
           }}

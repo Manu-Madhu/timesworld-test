@@ -5,9 +5,9 @@ import { SignInIcons } from "../../utils/socialLinks";
 
 const SignIn = () => {
   return (
-    <main className="d-flex flex-column align-items-center align-items-md-start text-center text-md-start p-5 w-100 gap-2 gap-md-3">
+    <main className="d-flex flex-column align-items-center align-items-md-start text-center text-md-start p-5 w-100 gap-2">
       {/* Title */}
-      <div className="d-flex flex-column gap-2 gap-md-3">
+      <div className="d-flex flex-column gap-2 ">
         <h2 className="form-title fw-bold">Sign In</h2>
         <p className="form-subtitle fw-bold">
           New user?

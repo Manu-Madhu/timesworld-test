@@ -18,7 +18,7 @@ const CountryCard = ({ country }) => {
         />
       </div>
       <div className="d-flex flex-column p-md-3">
-        <h2 className="card-text fw-bold m-0 mb-md-2">{country.name}</h2>
+        <h2 className="card-text fw-bold m-0 mb-md-1">{country.name}</h2>
         <p className="card-para mt-1">{country.region}</p>
       </div>
     </div>

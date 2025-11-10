@@ -40,7 +40,7 @@ const Slider = () => {
           onClick={handlePrev}
           className="slider-button border-0 bg-transparent fs-4 fw-bold"
         >
-          <RiArrowLeftLine size={32} />
+          <RiArrowLeftLine size={24} />
         </button>
 
         {/* Dots */}
@@ -61,7 +61,7 @@ const Slider = () => {
           className="border-0 bg-transparent fs-4 fw-bold"
           style={{ cursor: "pointer" }}
         >
-          <RiArrowRightLine size={32} />
+          <RiArrowRightLine size={24} />
         </button>
       </div>
     </main>

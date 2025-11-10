@@ -22,9 +22,9 @@
 }
 
 .social-icons {
-  width: 65px;
-  height: 65px;
-  border: 3px solid #3e3e3e;
+  width: 48px;
+  height: 48px;
+  border: 2px solid #3e3e3e;
   font-size: 25px;
 }
 
@@ -100,7 +100,7 @@
   content: "";
   position: absolute;
   width: 8px;
-  height: 14px;
+  height: 15px;
   border: solid white;
   border-width: 0 3px 3px 0;
   transform: rotate(45deg);

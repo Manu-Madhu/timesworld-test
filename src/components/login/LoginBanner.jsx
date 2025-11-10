@@ -8,7 +8,7 @@ const LoginBanner = () => {
       style={{ marginTop: "100px" }}
       className="d-none d-md-block w-100 h-100 text-end align-content-start"
     >
-      <img src={walkV1} alt="login banner" style={{ width: "80%" }} />
+      <img src={walkV1} alt="login banner" style={{ width: "70%" }} />
     </div>
   );
 };
